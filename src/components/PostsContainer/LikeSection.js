@@ -7,8 +7,19 @@ import { faComment, faHeart } from '@fortawesome/free-regular-svg-icons'
 
 const LikeSection = props => {
 
+  // const likeHandler = () => {
+  //   props.setLikes(props.likes + 1);
+  // }
+
   const likeHandler = () => {
-    props.setLikes(props.likes + 1);
+    if(!props.likeButton) {
+      props.setLikes(props.likes + 1);
+      props.setLikeButton(true);
+    }
+    else {
+      props.setLikes(props.likes - 1);
+      props.setLikeButton(false);
+    }
   }
 
   return (

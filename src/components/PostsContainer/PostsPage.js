@@ -15,7 +15,8 @@ const PostsPage = props => {
       {/* map through data here to return a Post and pass data as props to Post */}
       {
         posts.map(post => {
-          return <Post key={post.username} post={post} setPosts={setPosts}/>
+          post.updateLikes = false;
+          return <Post key={post.username} post={post} setPosts={setPosts} updateLikes={post.updateLikes}/>
         })
       }
     </div>
